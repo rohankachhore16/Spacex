@@ -6,18 +6,21 @@ import { Link } from "react-router-dom";
 import Youtube from "../../Assets/image/youtube.png";
 import Nasa from "../../Assets/image/satellite-tv .png";
 import Wordpress from "../../Assets/image/wordpress-.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  // width: 400,
   border: "2px solid #000",
   background: "#fff",
   boxShadow: 24,
   pt: 2,
   px: 4,
   pb: 3,
+ 
 };
 
 const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
@@ -53,7 +56,7 @@ const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
         <Box
           sx={{
             ...style,
-            width: 400,
+           
             maxHeight: "500px",
             overflowX: "hidden",
             border: "none",
