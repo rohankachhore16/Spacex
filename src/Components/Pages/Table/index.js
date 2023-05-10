@@ -12,9 +12,9 @@ const Table = () => {
   const dispatch = useDispatch();
   const [louchDetails, setLaouchDetails] = useState([]);
   const { launchData } = useSelector((state) => state?.allLaunch);
-  useEffect(() => {
-    dispatch(getAllLunchAsyncThunk())
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllLunchAsyncThunk())
+  // }, [dispatch]);
  
   const handleRowClick = (rowData) => {
     dispatch(getLaunchedDetailById({ id: rowData[0] }))
