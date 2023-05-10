@@ -1,4 +1,3 @@
-import { Chip } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -15,7 +14,7 @@ const Table = () => {
   const { launchData } = useSelector((state) => state?.allLaunch);
   useEffect(() => {
     dispatch(getAllLunchAsyncThunk())
-  }, []);
+  }, [dispatch]);
  
   const handleRowClick = (rowData) => {
     dispatch(getLaunchedDetailById({ id: rowData[0] }))

@@ -1,11 +1,11 @@
 export const SERVICE_ROUTE = {
-  ALL_LUNCHES: "https://api.spacexdata.com/v3/launches",
-  UPCOMING_LUNCH: "https://api.spacexdata.com/v3/launches/upcoming",
-  PAST_LUNCH: "https://api.spacexdata.com/v3/launches/past",
-  MODAL_LUNCH: "https://api.spacexdata.com/v3/launches/:id",
-  LATEST_LUNCH: "https://api.spacexdata.com/v3/launches/latest",
-  NEXT_LUNCH: "https://api.spacexdata.com/v3/launches/next",
-  GET_DETAIL_BY_ID: "https://api.spacexdata.com/v3/launches/:id",
+  ALL_LUNCHES: "/launches",
+  UPCOMING_LUNCH: "/launches/upcoming",
+  PAST_LUNCH: "/launches/past",
+  MODAL_LUNCH: "/launches/:id",
+  LATEST_LUNCH: "/launches/latest",
+  NEXT_LUNCH: "/launches/next",
+  GET_DETAIL_BY_ID: "/launches/:id",
 };
 
 export const METHODS = {

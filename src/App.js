@@ -4,9 +4,13 @@ import { Box, Container } from "@mui/material";
 import LanuchOption from "./Components/Pages/option_Filter";
 import Table from "./Components/Pages/Table";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import Axios  from "axios";
 function App() {
  
+  const baseUrl=process.env.REACT_APP_BASE_URL
+  console.log("baseUrl",baseUrl)
+  Axios.defaults.baseURL=baseUrl 
+
   return (
   
 
