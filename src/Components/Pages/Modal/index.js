@@ -2,7 +2,6 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { Avatar, Chip, Stack, Typography } from "@mui/material";
-import { YouTube } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Youtube from "../../Assets/image/youtube.png";
 import Nasa from "../../Assets/image/satellite-tv .png";
@@ -22,7 +21,6 @@ const style = {
 };
 
 const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
-  console.log(louchDetails, "_____________________");
   const handleClose = () => {
     setOpen(false);
   };
