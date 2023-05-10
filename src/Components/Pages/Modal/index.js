@@ -97,7 +97,16 @@ const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
               </Box>
             </Box>
             <Box sx={{ padding: "10px 0px" }}>
-              {louchDetails?.launch_success === true ? (
+              {louchDetails?.launch_success === null ? (
+                <Chip
+                  label="Upcoming"
+                  sx={{
+                    color: "green",
+                    padding: "5px 10px",
+                    background: "#E6FFE6",
+                  }}
+                />
+              ) : louchDetails?.launch_success === true ? (
                 <Chip
                   label="Success"
                   sx={{
@@ -105,7 +114,6 @@ const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
                     padding: "5px 10px",
                     background: "#E6FFE6",
                   }}
-                  
                 />
               ) : (
                 <Chip
