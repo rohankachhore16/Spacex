@@ -8,8 +8,7 @@ import Axios  from "axios";
 function App() {
  
   const baseUrl=process.env.REACT_APP_BASE_URL
-  console.log("baseUrl",baseUrl)
-  Axios.defaults.baseURL=baseUrl 
+  Axios.defaults.baseURL=baseUrl || "https://api.spacexdata.com/v3"
 
   return (
   
