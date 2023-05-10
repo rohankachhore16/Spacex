@@ -1,8 +1,6 @@
-import React ,{ useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getLaunchedDetailById,
-} from "../../../Redux/asyncThunk/lunchAsyncThunk";
+import { getLaunchedDetailById } from "../../../Redux/asyncThunk/lunchAsyncThunk";
 import ModalLaunch from "../Modal";
 import MUIDataTable from "mui-datatables";
 import { columns } from "./TableData";
@@ -11,8 +9,6 @@ const Table = () => {
   const dispatch = useDispatch();
   const [louchDetails, setLaouchDetails] = useState([]);
   const { launchData } = useSelector((state) => state?.allLaunch);
-
- 
   const handleRowClick = (rowData) => {
     dispatch(getLaunchedDetailById({ id: rowData[0] }))
       .unwrap()
@@ -22,8 +18,6 @@ const Table = () => {
       })
       .catch((err) => {});
   };
- 
-
   const options = {
     filterType: "checkbox",
     selectableRows: false,
@@ -36,14 +30,14 @@ const Table = () => {
     sort: false,
     search: false,
     onRowClick: handleRowClick,
+    responsive: "standard",
   };
   return (
     <>
-      <ModalLaunch open={open} setOpen={setOpen} louchDetails={louchDetails}  />
+      <ModalLaunch open={open} setOpen={setOpen} louchDetails={louchDetails} />
       {launchData && (
         <MUIDataTable data={launchData} columns={columns} options={options} />
       )}
-   
     </>
   );
 };

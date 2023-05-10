@@ -42,10 +42,10 @@ const LanuchOption = () => {
       dispatch(getAllLunchAsyncThunk({ launch_success: true }));
     } else if (filterValue === "Failed") {
       dispatch(getAllLunchAsyncThunk({ launch_success: false }));
-    }else{
+    } else {
       dispatch(getAllLunchAsyncThunk());
     }
-  }, [filterValue,dispatch]);
+  }, [filterValue, dispatch]);
 
   return (
     <>
