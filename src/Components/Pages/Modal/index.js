@@ -1,8 +1,12 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { Avatar, Chip, Typography } from "@mui/material";
-
+import { Avatar, Chip, Stack, Typography } from "@mui/material";
+import { YouTube } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import Youtube from "../../Assets/image/youtube.png";
+import Nasa from "../../Assets/image/satellite-tv .png";
+import Wordpress from "../../Assets/image/wordpress-.png";
 const style = {
   position: "absolute",
   top: "50%",
@@ -10,7 +14,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   border: "2px solid #000",
-  background:"#fff",
+  background: "#fff",
   boxShadow: 24,
   pt: 2,
   px: 4,
@@ -18,6 +22,7 @@ const style = {
 };
 
 const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
+  console.log(louchDetails, "_____________________");
   const handleClose = () => {
     setOpen(false);
   };
@@ -31,6 +36,7 @@ const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
       width: "100%",
       fontWeight: 300,
       mt: 1,
+
       borderBottom: "1px solid #e4e4e4",
     },
     dataTable: {
@@ -47,14 +53,21 @@ const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
         aria-describedby="parent-modal-description"
       >
         <Box
-          sx={{ ...style, width: 400, border: "none", borderRadius: "10px" }}
+          sx={{
+            ...style,
+            width: 400,
+            maxHeight: "500px",
+            overflowX: "hidden",
+            border: "none",
+            borderRadius: "10px",
+          }}
         >
           <Box sx={{ display: "flex" }}>
-            <Box sx={{ display: "flex", padding: "10px" }}>
+            <Box sx={{ display: "flex", padding: "10px 0px" }}>
               <Avatar
                 alt="Remy Sharp"
                 src={louchDetails?.links?.mission_patch}
-                sx={{ width: 56, height: 56 }}
+                sx={{ width: 60, height: 60 }}
               />
 
               <Box sx={{ padding: "5px 10px" }}>
@@ -72,28 +85,54 @@ const ModalLaunch = ({ open, setOpen, louchDetails, setFilterValue }) => {
                 >
                   {louchDetails?.rocket?.rocket_name}
                 </Typography>
+                <Stack direction="row" spacing={1} mt={1}>
+                  <Link to={louchDetails?.links?.article_link} target="_blank">
+                    <img src={Nasa} alt="" width={15} />
+                  </Link>
+                  <Link to={louchDetails?.links?.wikipedia} target="_blank">
+                    <img src={Wordpress} alt="" width={15} />
+                  </Link>
+                  <Link to={louchDetails?.links?.video_link} target="_blank">
+                    <img src={Youtube} alt="" width={15} />
+                  </Link>
+                </Stack>
               </Box>
             </Box>
-            <Box sx={{ padding: "10px" }}>
-              <Chip
-                label="success"
-                color="success"
-                size="small"
-                sx={{
-                  color: "green",
-                  padding: "5px 10px",
-                  background: "#E6FFE6",
-
-                  mt: 1,
-                }}
-              />
+            <Box sx={{ padding: "10px 0px" }}>
+              {louchDetails?.launch_success === true ? (
+                <Chip
+                  label="Success"
+                  sx={{
+                    color: "green",
+                    padding: "5px 10px",
+                    background: "#E6FFE6",
+                  }}
+                  
+                />
+              ) : (
+                <Chip
+                  label="Failed"
+                  sx={{
+                    background: "#FFCCCB",
+                    padding: "5px 10px",
+                    color: "red",
+                  }}
+                />
+              )}
             </Box>
           </Box>
-
+          {/* <Stack direction="row"> */}
           <Typography id="parent-modal-description">
             {louchDetails?.details}
+            <Link
+              to={louchDetails?.links?.wikipedia}
+              target="_blank"
+              style={{ textDecoration: "none", color: "blue" }}
+            >
+              .Wikipedia
+            </Link>
           </Typography>
-
+          {/* </Stack> */}
           <Box sx={Tblestyle.TableStyle}>
             <Typography>Flight Number</Typography>
             <Typography sx={Tblestyle.dataTable}>

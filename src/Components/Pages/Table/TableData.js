@@ -58,21 +58,24 @@ export const columns = [
           <div>
             {value === true ? (
               <Chip
-                label="succes"
+                label="Success"
                 sx={{
                   color: "green",
                   padding: "5px 10px",
                   background: "#E6FFE6",
                 }}
+                size="small"
               />
             ) : (
               <Chip
-                label="failed"
+                label="Failed"
                 sx={{
                   background: "#FFCCCB",
-                  padding: "5px 10px",
+                  padding: "5px 10px",  
                   color: "red",
                 }}
+                size="small"
+
               />
             )}
           </div>
