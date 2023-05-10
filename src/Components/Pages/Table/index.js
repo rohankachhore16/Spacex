@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React ,{ useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getAllLunchAsyncThunk,
   getLaunchedDetailById,
 } from "../../../Redux/asyncThunk/lunchAsyncThunk";
 import ModalLaunch from "../Modal";
@@ -12,9 +11,7 @@ const Table = () => {
   const dispatch = useDispatch();
   const [louchDetails, setLaouchDetails] = useState([]);
   const { launchData } = useSelector((state) => state?.allLaunch);
-  // useEffect(() => {
-  //   dispatch(getAllLunchAsyncThunk())
-  // }, [dispatch]);
+
  
   const handleRowClick = (rowData) => {
     dispatch(getLaunchedDetailById({ id: rowData[0] }))
