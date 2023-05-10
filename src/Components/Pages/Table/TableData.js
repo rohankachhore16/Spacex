@@ -56,38 +56,37 @@ export const columns = [
       customBodyRender: (value) => {
         return (
           <div>
-             {
-              value===null ?<Chip
-              label="Upcoming"
-              sx={{
-                color: "green",
-                padding: "5px 10px",
-                background: "#E6FFE6",
-              }}
-              size="small"
-            />: value === true ? (
-                <Chip
-                  label="Success"
-                  sx={{
-                    color: "green", 
-                    padding: "5px 10px",
-                    background: "#E6FFE6",
-                  }}
-                  size="small"
-                />
-              ) : (
-                <Chip
-                  label="Failed"
-                  sx={{
-                    background: "#FFCCCB",
-                    padding: "5px 10px",  
-                    color: "red",
-                  }}
-                  size="small"
-  
-                />
-              )}
-             
+            {value === null ? (
+              <Chip
+                label="Upcoming"
+                sx={{
+                  color: "#ac242c",
+                  padding: "5px 10px",
+                  background: "#ffe4a2",
+                }}
+                size="small"
+              />
+            ) : value === true ? (
+              <Chip
+                label="Success"
+                sx={{
+                  color: "green",
+                  padding: "5px 10px",
+                  background: "#E6FFE6",
+                }}
+                size="small"
+              />
+            ) : (
+              <Chip
+                label="Failed"
+                sx={{
+                  background: "#FFCCCB",
+                  padding: "5px 10px",
+                  color: "red",
+                }}
+                size="small"
+              />
+            )}
           </div>
         );
       },
@@ -105,4 +104,3 @@ export const columns = [
     },
   },
 ];
-
